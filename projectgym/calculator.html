@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator of gymfitness</title>
+    <style>
+        table{
+            border:1px solid gray;
+            border-collapse: collapse;
+            background-color: rgb(99,98,98);
+        }
+        tr,td{
+            border: 1px solid gray;
+
+        }
+        input[type="button"]{
+            background-color: white;
+            padding: 5px 10px;
+            font-size: 10px;
+        }
+        input[type="text"]{
+            height: 22px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="">
+        <table>
+            <tr>
+                <td colspan="3"><input type="text" id="resultValue"></td>
+                <td><input class="btn" type="button" value="c"></td>
+            </tr>
+            <tr>
+                <td><input class="btn" onclick="getCurrentValue('1')" type="button" value="1"></td>
+                <td><input class="btn" onclick="getCurrentValue('2')" type="button" value="2"></td>
+                <td><input class="btn" onclick="getCurrentValue('3')" type="button" value="3"></td>
+                <td><input class="btn" onclick="getCurrentValue('/')" type="button" value="/"></td>
+                </tr>
+                <tr>
+                <td><input class="btn" onclick="getCurrentValue('4')" type="button" value="4"></td>
+                <td><input class="btn" onclick="getCurrentValue('5')" type="button" value="5"></td>
+                <td><input class="btn" onclick="getCurrentValue('6')" type="button" value="6"></td>
+                <td><input class="btn" onclick="getCurrentValue('-')" type="button" value="-"></td>
+            </tr>
+            <tr>
+                <td><input class="btn" onclick="getCurrentValue('7')" type="button" value="7"></td>
+                <td><input class="btn" onclick="getCurrentValue('8')" type="button" value="8"></td>
+                <td><input class="btn" onclick="getCurrentValue('9')" type="button" value="9"></td>
+                <td><input class="btn" onclick="getCurrentValue('+')" type="button" value="+"></td>
+            </tr>
+            <tr>
+                <td><input class="btn" onclick="getCurrentValue('.')" type="button" value="."></td>
+                <td><input class="btn" onclick="getCurrentValue('0')" type="button" value="0"></td>
+                <td><input class="btn" onclick="equalToResult()" type="button" value="="></td>
+                <td><input class="btn" onclick="getCurrentValue('*')" type="button" value="*"></td>
+            </tr>
+
+        </table>
+    </div>
+    
+</body>
+<script>
+    function getCurrentValue(val)
+    {
+    
+        var oldValue = document.getElementById("resultValue").value;
+        document.getElementById("resultValue").value += val;
+            
+        
+    }
+    function clearValue(){
+        document.getElementById("resultValue").value= " ";
+    }
+    function equalToResult(){
+        var data = document.getElementById("resultValue").value;
+        document.getElementById("resultValue").value = eval(data);
+    }
+</script>
+</html>
